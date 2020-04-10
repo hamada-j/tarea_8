@@ -6,7 +6,6 @@ from django.apps import AppConfig
 class HelloWorldConfig(AppConfig):
     name = 'hello_world'
 
-
 '''
 
 STRING
@@ -165,4 +164,357 @@ while True:
             break
         else:
              print('sorry try agin')
+
+
+FOR LOOP
+for item in 'Python':
+    print(item)
+
+for item in ['MOSH', 'JOHN', 'MARTA']:
+    print(item)
+
+for item in [1,2,3,4,5,6,7,8,9]:
+    print(item)
+
+
+RANGE Function
+(0 to 10)
+for item in range(11):
+    print(item)
+
+for item in range(5, 10):
+    print(item)
+
+for item in range(5, 10, 2):
+    print(item)
+
+SHOP CART
+
+MY
+prices = [10,20,30]
+result = 0
+for item in prices:
+    result += int(item)
+print(result)
+
+MOSH
+prices = [10,20,30]
+total = 0
+for price in prices:
+    total += price
+print(f'Total: ${total}')
+
+NASTY LOOP
+for x in range(4):
+    for y in range(3):
+        print(f'({x}, {y})')
+
+
+MY
+numbers = [5,2,5,2,2,10,11]
+for num in numbers:
+    for element in range(num-1,num):
+        print((int(element) + 1) * 'x')
+MOSH
+numbers = [5,2,5,2,2,10,11]
+for x_count in numbers:
+    output = ''
+    for count in range (x_count):
+        output += 'x'
+    print(output)
+
+LISTS
+name = ['Jhon', 'Bob', 'Mosh', 'Hamada']
+name[0] = 'Jon'
+print(name[1:3])
+print(name)
+
+MY
+numbers = [1,2,33,4,55,6,7,8]
+print(max(numbers))
+
+MOSH
+numbers = [1,2,33,4,5,6,7,8]
+max_num = numbers[0]
+for num in numbers:
+    if num > max_num:
+        max_num = num
+print(max_num)
+
+
+TWO DIMENSIONAL LIST [[MATRIX]]
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+matrix[0][1] = 10
+print(matrix[0][1])
+for row in matrix:
+    for item in row:
+        print(item)
+
+matrix = [5, 2, 1, 1, 1, 1, 7, 4, 20]
+matrix.insert(0, 10)
+matrix.remove(2)
+matrix.pop()
+matrix.sort()
+matrix.reverse()
+matrix2 = matrix.copy()
+matrix.append(12)
+print(matrix)
+print(matrix2)
+print(matrix.count(1))
+print(33 in matrix)
+matrix.clear()
+
+MY
+matrix = [5,5, 2, 1, 1, 1, 7,7, 4, 20]
+for num in matrix:
+    print(matrix.count(num))
+    if matrix.count(num) != 1:
+        matrix.remove(num)
+print(matrix)
+
+MOSH
+
+matrix = [5,5, 2, 1, 1, 1, 7,7, 4, 20]
+uniques = []
+for number in matrix:
+    if number not in uniques:
+        uniques.append(number)
+print(uniques)
+
+
+TOPLIST
+
+coordinates = (1,2,3)
+2 Normal methods Count and Index
+
+__MagicMethods
+
+
+
+UNPAQUING
+
+coordinates = (1,2,3)
+----
+x = coordinates[0]
+y = coordinates[1]
+z = coordinates[2]
+----- igual que lo anterior
+x, y, z = coordinates
+----
+
+coordinates = [1, 2, 3]
+coordinates = (1, 2, 3)
+x, y, z = coordinates
+print(z)
+
+
+DICTIONARY: KEY_VALUE
+
+customers = {
+    'name': 'John',
+    'age': 35,
+    'is_verified': True
+}
+customers['birthdate'] =  'Jan 1 1980'
+print(f"{customers['age']} years old")
+print(customers)
+
+MY
+
+phone = input('phone: ')
+numbers2 = {
+    1: 'one',
+    2: 'two',
+    3: 'three',
+    4: 'four'
+}
+numbers = {
+    'one': 1,
+    'two': 2,
+    'three': 3,
+    'four': 4
+}
+
+for num in phone:
+    print(numbers2[int(num)])
+
+
+MOSH
+phone = input('Phone: ')
+
+digits_mappping = {
+    '1': 'One',
+    '2': 'Two',
+    '3': 'Three'
+}
+
+output = ''
+
+for ch in phone:
+   output += digits_mappping.get(ch, '!') + ' '
+
+print(output)
+
+message = input('>')
+words = message.split(' ')
+emojis = {
+    ':)': '🤣',
+    ':|': '🤨',
+    ':(': '😞',
+    ';)': '😉'
+}
+output = ''
+for word in words:
+  output +=  emojis.get(word, word) + ' '
+
+print(output)
+
+
+FUNCTIONS
+def greet_user(name, age):
+    print('Hi there!')
+    print(f'Welcome aboard {name}, {age} years old')
+
+
+print('Start')
+name = input('Your name: ')
+age = input('Your age: ')
+greet_user(name, age)
+print('Finish')
+
+def greet_user(name, age):
+    print('Hi there!')
+    print(f'Welcome aboard {name}, {age} years old')
+
+
+print('Start')
+greet_user(age= '12', name='hama')
+print('Finish')
+
+Sin el return devuleve NONE === NULL
+por defecto las funciones en Python devuleven NULL
+def square(number):
+    return number * number
+
+print(square(3))
+
+
+WITH FUNCTIONS
+message = input('>')
+
+def function_words(message):
+    words = message.split(' ')
+    return words
+
+def funcition_emojis():
+    output = ''
+    words = function_words(message)
+    emojis = {
+        ':)': '🤣',
+        ':|': '🤨',
+        ':(': '😞',
+        ';)': '😉'
+    }
+    for word in words:
+      output +=  emojis.get(word, word) + ' '
+    return output
+
+
+print(funcition_emojis())
+
+
+EXCEPTION (TRY EXCEPT)
+
+try:
+    age = int(input('Age: '))
+    print(age)
+except ValueError:
+    print('Invalid value')
+
+try:
+    age = int(input('Age: '))
+    income = 20000
+    risk = income / age
+    print(age)
+except ZeroDivisionError:
+    print('Age can not be 0')
+except ValueError:
+    print('Invalid value')
+
+COMMENTS
+# this is a comment
+
+# method print value
+print('Sky is blue')
+
+CLASSES
+
+Numbers
+Stirngs
+Booleans
+----
+Lists
+Dictionaries
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def move(self):
+        print('move')
+
+    def draw(self):
+        print('draw')
+
+
+point1 = Point(10, 20)
+print(point1.y , point1.x)
+
+class Person:
+    def __init__(self, lenguje):
+        self.lenguaje = lenguje
+
+    def tolk(self):
+        print(f'I speak  {self.lenguaje}')
+
+some_one = Person('ingles')
+print(some_one.lenguaje)
+print(some_one.tolk())
+
+
+INHERETENS -- SubClass --
+
+class Mammal:
+    def walk(self):
+        print('walk')
+
+class Dog(Mammal):
+    def be_nace(self):
+        print('walk')
+
+class Cat(Mammal):
+    pass
+
+
+dog1 = Dog()
+dog1.be_nace()
+dog1.walk()
+
+MODULES
+import converters
+from converters import kg_to_lbs
+
+kg_to_lbs(100)
+print(converters.kg_to_lbs(70))
+
+
+from data import numbers
+from utils import find_max
+
+print(find_max(numbers))
 '''
+
