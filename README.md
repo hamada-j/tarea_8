@@ -1,2 +1,2 @@
-# tarea_8
-Ejercicio para TCDN.
+# tarea_8 
+Ejercicio en Python-Django para TCDN.
